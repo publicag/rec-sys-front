@@ -1,0 +1,18 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <span class="title">RECOMMENDATION SYSTEM</span>
+      <span class="example-spacer"></span>
+      <ng-container *ngIf="userInfo; then logged; else notLogged"></ng-container>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+<ng-template #logged>
+  <button mat-raised-button class="button-nav" (click)="logout()">Logout</button>
+</ng-template>
+<ng-template #notLogged>
+  <button mat-raised-button class="button-nav" (click)="register()">Register</button>
+  <button mat-raised-button class="button-nav" (click)="signIn()">Sign in</button>
+</ng-template>

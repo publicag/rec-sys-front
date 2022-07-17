@@ -1,0 +1,21 @@
+<ng-container *ngIf="movie | async as mov">
+  <h2 mat-dialog-title>{{ mov.title | uppercase }}</h2>
+  <div class="box">
+    <div>    
+      <ng-container *ngIf="data.movie.imageURL; then imageFound; else imageNotFound">
+      </ng-container>
+    </div>
+    <ngb-rating [max]="10" [(rate)]="starRating" [readonly]="false"></ngb-rating>
+    <mat-dialog-content class="mat-typography">
+      <p>{{mov.overview}}</p>
+    </mat-dialog-content>
+  </div>
+</ng-container>
+
+<ng-template #imageFound>
+  <img [src]="data.movie.imageURL">
+</ng-template>
+
+<ng-template #imageNotFound>
+  <img src="../../../../assets/noimage.png" class="center">
+</ng-template>

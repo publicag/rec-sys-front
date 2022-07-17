@@ -1,0 +1,17 @@
+<div class="grid-item">
+  <div class="card">
+    <div class="card-image">
+      <ng-container *ngIf="movie.imageURL; then imageFound; else imageNotFound">
+      </ng-container>
+    </div>
+    <p>{{movie.title}}</p>
+  </div>
+</div>
+
+<ng-template #imageFound>
+  <img (click)="openDialog()" [src]="movie.imageURL">
+</ng-template>
+
+<ng-template #imageNotFound>
+  <img (click)="openDialog()" src="../../../../assets/noimage2.png">
+</ng-template>

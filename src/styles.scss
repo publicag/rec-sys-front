@@ -1,0 +1,16 @@
+// @import "~bootstrap/dist/css/bootstrap.css";
+* {
+  font-family: sans-serif;
+}
+
+mat-dialog-container {
+  background-color: #1d1d1f !important;
+  color: white !important;
+  border-radius: 15px !important;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';

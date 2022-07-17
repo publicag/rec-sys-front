@@ -1,0 +1,21 @@
+<ng-container *ngIf="isRated; then ratedMoves"></ng-container>
+<ng-container *ngIf="genre; then genres"></ng-container>
+<ng-container *ngIf="!genre && !isRated; then recommendation;"></ng-container>
+<swiper [config]="config">
+  <div class="swiper-wrapper">
+    <app-movie-cover class="swiper-slide" *ngFor="let movie of movies | async" [movie]="movie">
+    </app-movie-cover>
+  </div>
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
+</swiper>
+
+<ng-template #genres>
+  <p>{{genre}}</p>
+</ng-template>
+<ng-template #recommendation>
+  <p>Recommendations</p>
+</ng-template>
+<ng-template #ratedMoves>
+  <p>Rated movies</p>
+</ng-template>

@@ -1,0 +1,8 @@
+<div class="grid">
+  <app-movie-list></app-movie-list>
+  <p *ngFor="let genre of visibleGenres">
+    <app-movie-list [genre]="genre"></app-movie-list>
+  </p>
+  <app-movie-list [isRated]="true"></app-movie-list>
+</div>
+
